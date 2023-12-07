@@ -1,0 +1,51 @@
+---
+title: "Snu"
+format:
+  html:
+    embed-resources: true
+editor: visual
+---
+
+```{r, results='asis', echo = FALSE}
+a <- knitr::knit_child('snow.Rmd', quiet=T)
+cat(a, sep="\n")
+```
+
+## Yu no nothin' Jon Snu
+
+Taken shamelessly from https://emilyriederer.netlify.app/post/snow/
+
+This gives an excellent guide for using child files.
+
+The little code chunk above is what calls another .RMD file that contains the CSS that does all the magic.
+
+There are two fancy files, snow and fireworks.
+
+Simply plonk the RMD file in your folder and include the chunk above.
+
+Do the rendering thing and ta da - snu!
+
+---
+
+## Normal Quarto Demo stuff below
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
