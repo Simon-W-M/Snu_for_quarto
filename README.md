@@ -8,3 +8,10 @@ Include the snow.rmd or alternatively the fireworks.rmd in your same folder.
 Render your report and ta da!  
 
 <<< Animated snowflakes >>>
+
+     *
+
+                  *     
+       *     
+            * 
+*
