@@ -27,6 +27,58 @@ Do the rendering thing and ta da - snu!
 
 ---
 
+## Bonus christmas tree
+
+Shamelessly  ~~stolen~~ shared from https://www.datawim.com/post/making-merry-christmas-tree-in-r/
+
+
+```{r, results='asis'}
+if(!require(tidyverse)){
+    install.packages("tidyverse", 
+                     dependencies =TRUE)
+    library(tidyverse)}
+if(!require(mlbench)){
+    install.packages("mlbench", 
+                     dependencies =TRUE)
+    library(mlbench)}
+if(!require(viridis)){
+    install.packages("viridis", 
+                     dependencies =TRUE)
+    library(viridis)}
+
+
+
+#set.seed(12345)
+data <- mlbench.shapes(n=100000) 
+
+canopy <- data |>
+  as.data.frame() |> 
+  filter(classes == "3")
+
+# trunk
+y <- c(0.8, 1, 1, 0.8)  
+x <- c(00.8, 00.8, 1.2, 1.2)
+
+# bind columns as a data frame
+trunk = as.data.frame(cbind(x, y))
+
+ggplot() +
+  geom_polygon(aes(x = x, y = y), data = trunk, fill = "brown") +
+  stat_density_2d(aes(x = x.x4, y = x.V2, fill = ..level..), data = canopy, geom = "polygon") +
+  scale_fill_viridis() +
+  theme_void() +
+  theme(legend.position = "none") +
+  labs(title="Seasonal Greetings",
+       subtitle = "May all your reports render!",
+       caption="Simon W-M 2023")
+
+
+
+```
+
+
+
+
 ## Normal Quarto Demo stuff below
 
 ## Quarto
